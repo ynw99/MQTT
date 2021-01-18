@@ -5,7 +5,7 @@ from random import uniform
 import paho.mqtt.client as mqtt 
 
 mqttBroker = 'mqtt.eclipseprojects.io'      # Alamat broker dari MQTT
-mqttTopic = 'MQTT-JSN'                   # Topik yang digunakan
+mqttTopic = 'MQTT-JSN'                      # Topik yang digunakan
 client = mqtt.Client('Temperature_Inside')  # Instansiasi objek MQTT publisher
 client.connect(mqttBroker)                  # Melakukan koneksi dengan broker MQTT
 
