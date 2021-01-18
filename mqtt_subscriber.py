@@ -24,10 +24,12 @@ def on_message(client, userdata, message):
     
     try:
         cur.execute('INSERT INTO table_name VALUES {}'.format(message)) # Insert data message ke database
+        db.commit()                         # Apply cur.execute()
         print('Data inserted succesfully')
 
     except:
-        print('Unable to insert the data')
+        print('Unable to insert the data') 
+        db.rollback()                       # Rollback db jika gagal
 
 client.loop_start()                         # Memulai looping untuk subscriber
 
